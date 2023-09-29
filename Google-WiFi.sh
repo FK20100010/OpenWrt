@@ -6,7 +6,7 @@
 #   Blog: https://p3terx.com
 #=================================================
 #克隆源码
-git clone -b master --single-branch https://github.com/openwrt/openwrt
+git clone -b main --single-branch https://github.com/openwrt/openwrt
 #svn co https://github.com/Lienol/openwrt/trunk/tools/ucl openwrt/tools/ucl
 #svn co https://github.com/Lienol/openwrt/trunk/tools/upx openwrt/tools/upx
 #sed -i 'N;28 a tools-y += ucl upx' openwrt/tools/Makefile
