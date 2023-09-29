@@ -29,8 +29,8 @@ rm -rf feeds/packages/net/miniupnpd
 svn co https://github.com/x-wrt/x-wrt/trunk/package/libs/ustream-ssl package/ustream-ssl
 svn co https://github.com/x-wrt/packages/trunk/net/miniupnpd feeds/packages/net/miniupnpd
 
-wget -P target/linux/generic/hack-5.15 https://raw.githubusercontent.com/x-wrt/x-wrt/master/target/linux/generic/hack-5.15/999-natcap-patch-kernel-for-cone-nat-support.patch
-wget -P target/linux/generic/hack-5.15 https://raw.githubusercontent.com/x-wrt/x-wrt/master/target/linux/generic/hack-5.15/960-net-core-__netif_receive_skb_core-handle-INGRESS-bef.patch
+#wget -P target/linux/generic/hack-5.15 https://raw.githubusercontent.com/x-wrt/x-wrt/master/target/linux/generic/hack-5.15/999-natcap-patch-kernel-for-cone-nat-support.patch
+#wget -P target/linux/generic/hack-5.15 https://raw.githubusercontent.com/x-wrt/x-wrt/master/target/linux/generic/hack-5.15/960-net-core-__netif_receive_skb_core-handle-INGRESS-bef.patch
 
 #wget -q -O - https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz | tar -Jx --strip 1 -f - -C staging_dir/host/bin upx-3.96-amd64_linux/upx
 #添加自定义插件
@@ -70,4 +70,4 @@ sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai
 
 
 #mv -f ../Google-Wifi/Google.config .config
-mv -f ../Google-Wifi/x-wrt-google.config .config
+mv -f ../Google-Wifi/google_op.config .config
