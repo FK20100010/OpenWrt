@@ -15,8 +15,10 @@ git clone -b main --single-branch https://github.com/openwrt/openwrt
 [ -e files ] && mv files openwrt/files
 cd openwrt
 #添加passwall
-sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git' feeds.conf.default
-sed -i '$a src-git xiaorouji1 https://github.com/xiaorouji/openwrt-passwall.git;luci' feeds.conf.default
+echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
+#sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git' feeds.conf.default
+#sed -i '$a src-git xiaorouji1 https://github.com/xiaorouji/openwrt-passwall.git;luci' feeds.conf.default
 sed -i '$a src-git-full x https://github.com/x-wrt/com.x-wrt.git' feeds.conf.default
 ./scripts/feeds clean
 ./scripts/feeds update -a
