@@ -34,7 +34,7 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-a
 #git clone https://github.com/small-5/luci-app-adblock-plus.git package/luci-app-adblock-plus
 git clone https://github.com/ntlf9t/luci-app-easymesh package/luci-app-easymesh
 git clone https://github.com/KFERMercer/luci-app-tcpdump.git package/luci-app-tcpdump
-git clone https://github.com/dazhaolear/luci-app-autorebootnew.git package/luci-app-autorebootnew
+#git clone https://github.com/dazhaolear/luci-app-autorebootnew.git package/luci-app-autorebootnew
 #修改Samba4d的位置
 #sed -i "/exit 0/i\sed -i 's/services/nas/g' /usr/lib/lua/luci/controller/samba4.lua" package/default-settings/files/zzz-default-settings
 #sed -i "/exit 0/i\sed -i 's/services/nas/g' /usr/share/luci/menu.d/luci-app-samba4.json" package/default-settings/files/zzz-default-settings
