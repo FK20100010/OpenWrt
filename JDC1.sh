@@ -42,5 +42,5 @@ sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib
 
 #修改时区
 sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
-
+mv -f ../Google-Wifi/jdc1.config .config
 #make V=s -j$(nproc)
