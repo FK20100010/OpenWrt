@@ -41,6 +41,11 @@ sed -i 's/OpenWrt/JDCloud/g' package/base-files/files/bin/config_generate
 #sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.sh
 sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
+sed -i '/exit 0/i\uci set wireless.@wifi-device[0].disabled=0' package/emortal/default-settings/files/99-default-settings
+sed -i '/exit 0/i\uci set wireless.@wifi-device[1].disabled=0' package/emortal/default-settings/files/99-default-settings
+sed -i '/exit 0/i\wifi' package/emortal/default-settings/files/99-default-settings
+sed -i '/exit 0/i\uci commit' package/emortal/default-settings/files/99-default-settings
+
 #修改时区
 sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
