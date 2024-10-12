@@ -3,7 +3,7 @@ git clone -b main --single-branch https://github.com/breeze303/openwrt-ipq.git o
 cd openwrt
 
 #sed -i '$a src-git other https://github.com/Lienol/openwrt-package.git;other' feeds.conf.default
-echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+sed -i '$a src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' feeds.conf.default
 echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
 echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
 
