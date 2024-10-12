@@ -1,4 +1,4 @@
-git clone -b ipq60xx-devel_nss --single-branch https://github.com/JiaY-shi/openwrt.git openwrt
+git clone -b main --single-branch https://github.com/breeze303/openwrt-ipq.git openwrt
 [ -e files ] && mv files openwrt/files
 cd openwrt
 
