@@ -39,7 +39,7 @@ sed -i 's/OpenWrt/JDCloud/g' package/base-files/files/bin/config_generate
 
 #默认打开WiFi
 #sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.sh
-sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
+#sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
 sed -i '/exit 0/i\uci set wireless.@wifi-device[0].disabled=0' package/emortal/default-settings/files/99-default-settings
 sed -i '/exit 0/i\uci set wireless.@wifi-device[1].disabled=0' package/emortal/default-settings/files/99-default-settings
@@ -50,5 +50,5 @@ sed -i '/exit 0/i\uci commit' package/emortal/default-settings/files/99-default-
 sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
 mv -f ../Google-Wifi/jdc.config .config
-
+sed -i 's/read-only/#read-only/g' target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4c.dts
 #make V=s -j$(nproc)
