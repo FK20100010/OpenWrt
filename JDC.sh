@@ -1,11 +1,11 @@
-git clone -b main --single-branch https://github.com/LiBwrt-op/openwrt-6.x.git openwrt
+git clone https://github.com/openwrt/openwrt.git openwrt
 [ -e files ] && mv files openwrt/files
 cd openwrt
 
 #sed -i '$a src-git other https://github.com/Lienol/openwrt-package.git;other' feeds.conf.default
-echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
-echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
-echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
+#echo "src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main" >> "feeds.conf.default"
+#echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main" >> "feeds.conf.default"
+#echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main" >> "feeds.conf.default"
 
 #sed -i '$a src-git xiaorouji https://github.com/xiaorouji/openwrt-passwall.git' feeds.conf.default
 #sed -i '$a src-git xiaorouji1 https://github.com/xiaorouji/openwrt-passwall.git;luci' feeds.conf.default
@@ -16,15 +16,15 @@ echo "src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;main"
 
 #添加自定义插件
 #git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
-git clone -b js --single-branch https://github.com/papagaye744/luci-theme-design.git package/luci-theme-design
+#git clone -b js --single-branch https://github.com/papagaye744/luci-theme-design.git package/luci-theme-design
 
-rm -rf feeds/packages/net/chinadns-ng
-cp -rf feeds/passwall_packages/chinadns-ng/ feeds/packages/net/
-rm -rf feeds/luci/applications/luci-app-passwall/
-cp -rf feeds/passwall/luci-app-passwall/ feeds/luci/applications
+#rm -rf feeds/packages/net/chinadns-ng
+#cp -rf feeds/passwall_packages/chinadns-ng/ feeds/packages/net/
+#rm -rf feeds/luci/applications/luci-app-passwall/
+#cp -rf feeds/passwall/luci-app-passwall/ feeds/luci/applications
 
 # TTYD 免登录
-sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
+#sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 #rm -rf package/libs/ustream-ssl
 #rm -rf feeds/packages/net/miniupnpd
@@ -35,16 +35,16 @@ sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.
 sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_generate
 
 #修改机器名称
-sed -i 's/OpenWrt/JDCloud/g' package/base-files/files/bin/config_generate
+#sed -i 's/OpenWrt/JDCloud/g' package/base-files/files/bin/config_generate
 
 #默认打开WiFi
-#sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.sh
+sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.sh
 #sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 
-sed -i '/exit 0/i\uci set wireless.@wifi-device[0].disabled=0' package/emortal/default-settings/files/99-default-settings
-sed -i '/exit 0/i\uci set wireless.@wifi-device[1].disabled=0' package/emortal/default-settings/files/99-default-settings
-sed -i '/exit 0/i\wifi' package/emortal/default-settings/files/99-default-settings
-sed -i '/exit 0/i\uci commit' package/emortal/default-settings/files/99-default-settings
+#sed -i '/exit 0/i\uci set wireless.@wifi-device[0].disabled=0' package/emortal/default-settings/files/99-default-settings
+#sed -i '/exit 0/i\uci set wireless.@wifi-device[1].disabled=0' package/emortal/default-settings/files/99-default-settings
+#sed -i '/exit 0/i\wifi' package/emortal/default-settings/files/99-default-settings
+#sed -i '/exit 0/i\uci commit' package/emortal/default-settings/files/99-default-settings
 
 #修改时区
 sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
