@@ -50,5 +50,5 @@ sed -i 's/disabled=1/disabled=0/g' package/network/config/wifi-scripts/files/lib
 sed -i "s/'UTC'/'CST-8'\n        set system.@system[-1].zonename='Asia\/Shanghai'/g" package/base-files/files/bin/config_generate
 
 mv -f ../Google-Wifi/jdc.config .config
-sed -i 's/read-only/#read-only/g' target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4c.dts
+sed -i 's/read-only/#read-only/g' target/linux/ramips/dts/mt7628an_xiaomi_mi-router-4.dtsi
 #make V=s -j$(nproc)
