@@ -7,9 +7,9 @@
 #=================================================
 #克隆源码
 git clone https://github.com/VIKINGYFY/immortalwrt.git VIKINGYFY
-git clone -b openwrt-24.10 --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt.git
-[ -e files ] && mv files immortalwrt/files
-cd immortalwrt
+git clone -b openwrt-24.10 --single-branch --filter=blob:none https://github.com/immortalwrt/immortalwrt.git openwrt
+[ -e files ] && mv files openwrt/files
+cd openwrt
 #添加passwall
 sed -i '/^#/d' feeds.conf.default
 echo "src-git nss_packages https://github.com/qosmio/nss-packages.git" >> "feeds.conf.default"
